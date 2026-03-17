@@ -1,0 +1,24 @@
+for _ in range(int(input())):
+    n = int(input())
+    cubes = list(map(int, input().split()))
+    
+    l, r = 0, n - 1
+    last = float('inf')
+    possible = "Yes"
+    
+    while l <= r:
+      
+        if cubes[l] >= cubes[r]:
+            current = cubes[l]
+            l += 1
+        else:
+            current = cubes[r]
+            r -= 1
+            
+        
+        if current > last:
+            possible = "No"
+            break
+        last = current
+        
+    print(possible)
