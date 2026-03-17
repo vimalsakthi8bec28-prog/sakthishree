@@ -1,0 +1,25 @@
+from collections import deque
+
+def process_deque_operations():
+    d = deque()
+    
+    n = int(input())
+    
+    for _ in range(n):
+       
+        line = input().split()
+        method = line[0]
+        
+        if method == "append":
+            d.append(line[1])
+        elif method == "appendleft":
+            d.appendleft(line[1])
+        elif method == "pop":
+            d.pop()
+        elif method == "popleft":
+            d.popleft()
+            
+    print(*(d))
+
+if __name__ == "__main__":
+    process_deque_operations()
