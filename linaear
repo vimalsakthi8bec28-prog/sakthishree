@@ -1,0 +1,6 @@
+import numpy
+
+n = int(input())
+matrix = [list(map(float, input().split())) for _ in range(n)]
+result = numpy.linalg.det(matrix)
+print(round(result, 2))
