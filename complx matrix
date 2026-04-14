@@ -1,0 +1,13 @@
+import re
+
+
+n, m = map(int, input().split())
+
+
+matrix = [input() for _ in range(n)]
+decoded_string = "".join(["".join(col) for col in zip(*matrix)])
+
+
+result = re.sub(r'(?<=\w)([^\w]+)(?=\w)', ' ', decoded_string)
+
+print(result)
