@@ -1,0 +1,20 @@
+import re
+
+# Loop through the number of cards
+for _ in range(int(input())):
+    card = input()
+    
+    # 1. Check basic structure: starts with 4,5,6 and is either 16 digits OR 4 groups of 4 separated by '-'
+    structure_match = re.match(r"^[456](?:\d{15}|\d{3}(?:-\d{4}){3})$", card)
+    
+    if structure_match:
+        # 2. Remove hyphens to check for consecutive repeated digits
+        clean_card = card.replace("-", "")
+        
+        # 3. Check for 4 or more consecutive identical digits
+        if re.search(r"(\d)\1{3,}", clean_card):
+            print("Invalid")
+        else:
+            print("Valid")
+    else:
+        print("Invalid")
