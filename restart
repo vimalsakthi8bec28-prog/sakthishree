@@ -1,0 +1,16 @@
+import re
+
+S = input().strip()
+k = input().strip()
+
+
+pattern = re.compile(f'(?=({re.escape(k)}))')
+matches = list(pattern.finditer(S))
+
+if not matches:
+    print("(-1, -1)")
+else:
+    for match in matches:
+        start_index = match.start()
+        end_index = start_index + len(k) - 1
+        print(f"({start_index}, {end_index})")
