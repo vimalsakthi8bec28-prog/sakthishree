@@ -1,0 +1,16 @@
+import re
+import email.utils
+
+n = int(input())
+
+# The regex based on the specific rules provided
+pattern = r'^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$'
+
+for _ in range(n):
+    line = input()
+    # parseaddr returns a tuple: ('NAME', 'email@address.com')
+    parsed_name, parsed_email = email.utils.parseaddr(line)
+    
+    if re.match(pattern, parsed_email):
+        # formataddr puts them back into "NAME <email@address.com>" format
+        print(email.utils.formataddr((parsed_name, parsed_email)))
