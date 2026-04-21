@@ -1,0 +1,6 @@
+n, m = map(int, input().split())
+athletes = [list(map(int, input().split())) for _ in range(n)]
+k = int(input())
+athletes.sort(key=lambda x: x[k])
+for row in athletes:
+    print(*row)
