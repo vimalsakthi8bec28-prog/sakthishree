@@ -1,0 +1,12 @@
+import re
+
+# Read the number of inputs
+n = int(input())
+
+for _ in range(n):
+    number = input().strip()
+    # re.match checks from the start; we add the $ to ensure it ends correctly
+    if re.match(r"^[789]\d{9}$", number):
+        print("YES")
+    else:
+        print("NO")
