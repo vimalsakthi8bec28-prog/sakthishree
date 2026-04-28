@@ -1,0 +1,15 @@
+import numpy
+
+# Read N and M
+n, m = map(int, input().split())
+
+# Create the 2D array from input lines
+array = numpy.array([input().split() for _ in range(n)], int)
+
+# Step 1: Find the sum along axis 0
+sum_axis_0 = numpy.sum(array, axis=0)
+
+# Step 2: Find the product of that result
+result = numpy.prod(sum_axis_0)
+
+print(result)
