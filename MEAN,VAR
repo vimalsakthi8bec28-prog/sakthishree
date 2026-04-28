@@ -1,0 +1,14 @@
+import numpy
+
+# 1. Setup: Read N and M, then load the numbers into an array
+n, m = map(int, input().split())
+my_array = numpy.array([input().split() for _ in range(n)], int)
+
+# 2. Mean along Axis 1 (Rows)
+print(numpy.mean(my_array, axis=1))
+
+# 3. Variance along Axis 0 (Columns)
+print(numpy.var(my_array, axis=0))
+
+# 4. Standard Deviation (All elements)
+print(round(numpy.std(my_array), 11))
