@@ -1,0 +1,9 @@
+import numpy
+# Required for correct spacing/alignment in the output
+numpy.set_printoptions(legacy='1.13')
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Create the identity-style matrix
+print(numpy.eye(n, m))
