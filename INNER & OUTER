@@ -1,0 +1,13 @@
+import numpy
+
+# Read the two arrays from input
+A = numpy.array(input().split(), int)
+B = numpy.array(input().split(), int)
+
+# 1. Compute Inner Product
+# (0*2) + (1*3) = 3
+print(numpy.inner(A, B))
+
+# 2. Compute Outer Product
+# [[0*2, 0*3], [1*2, 1*3]]
+print(numpy.outer(A, B))
