@@ -1,0 +1,29 @@
+import re
+
+def validate_float():
+    # Read the number of test cases
+    t = int(input().strip())
+    
+    for _ in range(t):
+        s = input().strip()
+        
+        # Regex breakdown:
+        # ^[+-]? : Optional leading + or -
+        # \d*    : Zero or more digits before the dot
+        # \.     : Exactly one decimal point
+        # \d+    : At least one digit after the dot
+        # $      : End of the string
+        is_match = bool(re.match(r'^[+-]?\d*\.\d+$', s))
+        
+        if is_match:
+            try:
+                # Final verification via conversion
+                float(s)
+                print(True)
+            except ValueError:
+                print(False)
+        else:
+            print(False)
+
+if __name__ == "__main__":
+    validate_float()
